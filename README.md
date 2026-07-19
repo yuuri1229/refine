@@ -70,6 +70,16 @@ microCMS未設定の状態でも、`src/lib/microcms.ts` 内のフォールバ�
 
 独自ドメイン（refine.support）はVercel側のドメイン設定から移管・接続してください。
 
+## 参考: GitHub Pagesでの静的プレビュー
+
+本番はVercel（サーバー機能あり）を前提としていますが、`npm run build:gh-pages` でAPI Routeを含まない静的書き出し（`output: 'export'`）を`./out`に生成できます。GitHub Pagesのようなプロジェクトサブパス配信では `NEXT_PUBLIC_BASE_PATH` にリポジトリ名を指定してください。
+
+```bash
+NEXT_PUBLIC_BASE_PATH=/refine npm run build:gh-pages
+```
+
+この場合、お問い合わせフォームの送信（`/api/contact`）は利用できません（LINE・メールへの案内表示にフォールバックします）。
+
 ## SEO
 
 - `src/app/sitemap.ts` / `src/app/robots.ts` で自動生成

@@ -3,13 +3,18 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Icon from "@/components/Icon";
 import PageHeader from "@/components/PageHeader";
-import { getNewsDetail } from "@/lib/microcms";
+import { getNewsDetail, getNewsList } from "@/lib/microcms";
 
 type Props = { params: Promise<{ id: string }> };
 
 function formatDate(iso: string) {
   const d = new Date(iso);
   return `${d.getFullYear()}/${d.getMonth() + 1}/${d.getDate()}`;
+}
+
+export async function generateStaticParams() {
+  const news = await getNewsList({ limit: 100 });
+  return news.map((item) => ({ id: item.id }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

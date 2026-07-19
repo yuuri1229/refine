@@ -2,6 +2,8 @@ import type { MetadataRoute } from "next";
 import { siteConfig } from "@/data/site";
 import { getNewsList } from "@/lib/microcms";
 
+export const dynamic = "force-static";
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const news = await getNewsList({ limit: 100 });
 

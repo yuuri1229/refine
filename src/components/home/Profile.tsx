@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { siteConfig } from "@/data/site";
+import { assetPath } from "@/lib/asset-path";
 
 export default function Profile() {
   return (
@@ -31,7 +32,7 @@ export default function Profile() {
 
           <div className="mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl shadow-lg">
             <Image
-              src="/images/representative.jpg"
+              src={assetPath("/images/representative.jpg")}
               alt={`代表 ${siteConfig.representative}`}
               width={1400}
               height={933}

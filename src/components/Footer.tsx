@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Icon from "./Icon";
 import { footerLinks, siteConfig } from "@/data/site";
+import { assetPath } from "@/lib/asset-path";
 
 export default function Footer() {
   return (
@@ -10,7 +11,7 @@ export default function Footer() {
         <div className="flex flex-col items-center text-center">
           <p className="text-xs font-bold tracking-wide text-ink-500">携帯料金見直しサービス</p>
           <Image
-            src="/logo/refine-logo-orange.svg"
+            src={assetPath("/logo/refine-logo-orange.svg")}
             alt={siteConfig.shortName}
             width={140}
             height={25}

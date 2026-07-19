@@ -6,6 +6,7 @@ import Link from "next/link";
 import Icon from "./Icon";
 import LineButton from "./LineButton";
 import { navLinks, siteConfig } from "@/data/site";
+import { assetPath } from "@/lib/asset-path";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -15,7 +16,7 @@ export default function Header() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
           <Image
-            src="/logo/refine-logo-orange.svg"
+            src={assetPath("/logo/refine-logo-orange.svg")}
             alt={siteConfig.shortName}
             width={140}
             height={25}
