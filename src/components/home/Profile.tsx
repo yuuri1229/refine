@@ -1,4 +1,4 @@
-import Icon from "@/components/Icon";
+import Image from "next/image";
 import { siteConfig } from "@/data/site";
 
 export default function Profile() {
@@ -29,10 +29,15 @@ export default function Profile() {
             </p>
           </div>
 
-          <div className="mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl bg-gradient-to-br from-primary-400 to-primary-600 shadow-lg">
-            <div className="flex h-full w-full items-center justify-center text-white/70">
-              <Icon name="account_circle" className="!text-8xl" />
-            </div>
+          <div className="mx-auto aspect-[4/5] w-full max-w-sm overflow-hidden rounded-3xl shadow-lg">
+            <Image
+              src="/images/representative.jpg"
+              alt={`代表 ${siteConfig.representative}`}
+              width={1400}
+              height={933}
+              className="h-full w-full object-cover"
+              sizes="(min-width: 768px) 24rem, 90vw"
+            />
           </div>
         </div>
       </div>

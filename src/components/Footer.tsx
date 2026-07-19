@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Icon from "./Icon";
 import { footerLinks, siteConfig } from "@/data/site";
@@ -8,9 +9,13 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8">
         <div className="flex flex-col items-center text-center">
           <p className="text-xs font-bold tracking-wide text-ink-500">携帯料金見直しサービス</p>
-          <p className="mt-1 text-2xl font-black tracking-tight text-primary-500">
-            {siteConfig.shortName}
-          </p>
+          <Image
+            src="/logo/refine-logo-orange.svg"
+            alt={siteConfig.shortName}
+            width={140}
+            height={25}
+            className="mt-2 h-7 w-auto"
+          />
 
           <nav className="mt-6 flex flex-wrap items-center justify-center gap-x-2 gap-y-2 text-sm text-ink-600">
             {footerLinks.map((link, i) => (

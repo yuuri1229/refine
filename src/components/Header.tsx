@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import Icon from "./Icon";
 import LineButton from "./LineButton";
@@ -12,13 +13,15 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-ink-100 bg-white/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary-500 text-white">
-            <Icon name="mobile" />
-          </span>
-          <span className="text-lg font-black tracking-tight text-ink-900">
-            {siteConfig.shortName}
-          </span>
+        <Link href="/" className="flex items-center" onClick={() => setOpen(false)}>
+          <Image
+            src="/logo/refine-logo-orange.svg"
+            alt={siteConfig.shortName}
+            width={140}
+            height={25}
+            priority
+            className="h-6 w-auto sm:h-7"
+          />
         </Link>
 
         <nav className="hidden items-center gap-8 md:flex">

@@ -1,9 +1,17 @@
+import { readFile } from "node:fs/promises";
+import path from "node:path";
 import { ImageResponse } from "next/og";
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-export default function OpengraphImage() {
+export default async function OpengraphImage() {
+  const svg = await readFile(
+    path.join(process.cwd(), "public/logo/refine-logo-white.svg"),
+    "utf-8",
+  );
+  const logoDataUri = `data:image/svg+xml;base64,${Buffer.from(svg).toString("base64")}`;
+
   return new ImageResponse(
     (
       <div
@@ -17,31 +25,8 @@ export default function OpengraphImage() {
           background: "linear-gradient(135deg, #fa8829 0%, #f56a01 45%, #b84b00 100%)",
         }}
       >
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: 160,
-            height: 160,
-            borderRadius: 40,
-            background: "rgba(255,255,255,0.18)",
-            marginBottom: 40,
-          }}
-        >
-          <div
-            style={{
-              width: 90,
-              height: 90,
-              borderRadius: 20,
-              background: "#ffffff",
-            }}
-          />
-        </div>
-        <div style={{ display: "flex", fontSize: 96, fontWeight: 900, color: "#ffffff", letterSpacing: -2 }}>
-          REFINE
-        </div>
-        <div style={{ display: "flex", fontSize: 32, fontWeight: 700, color: "#fff4eb", marginTop: 16 }}>
+        <img src={logoDataUri} alt="REFINE" width={520} height={92} />
+        <div style={{ display: "flex", fontSize: 32, fontWeight: 700, color: "#fff4eb", marginTop: 28 }}>
           Mobile Bill Review Service
         </div>
       </div>

@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Icon from "@/components/Icon";
 import LineButton from "@/components/LineButton";
 import Link from "next/link";
@@ -18,7 +19,16 @@ export default function Hero() {
 
       <div className="relative mx-auto max-w-6xl px-4 py-20 sm:px-6 md:py-28 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="inline-flex items-center gap-1.5 rounded-full bg-secondary-500 px-4 py-1.5 text-xs font-bold text-white sm:text-sm">
+          <Image
+            src="/logo/refine-logo-white.svg"
+            alt={siteConfig.shortName}
+            width={220}
+            height={39}
+            priority
+            className="mx-auto h-9 w-auto sm:h-11"
+          />
+
+          <p className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-secondary-500 px-4 py-1.5 text-xs font-bold text-white sm:text-sm">
             <Icon name="bolt" className="text-base" />
             {siteConfig.badge}
           </p>
