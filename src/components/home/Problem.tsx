@@ -1,33 +1,43 @@
 import Icon from "@/components/Icon";
+import Reveal from "@/components/Reveal";
 
 const problems = [
-  "今いくら払っているのかわからない",
-  "マイdocomo、マイauなど開いたことがない",
-  "誰に相談したらいいかわからない",
+  {
+    icon: "receipt_long",
+    text: "今いくら払っているのかわからない",
+  },
+  {
+    icon: "mobile",
+    text: "マイdocomo、マイauなど開いたことがない",
+  },
+  {
+    icon: "forum",
+    text: "誰に相談したらいいかわからない",
+  },
 ];
 
 export default function Problem() {
   return (
-    <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
-      <div className="text-center">
-        <p className="text-sm font-bold tracking-wide text-primary-600">PROBLEM</p>
-        <h2 className="mt-2 text-2xl font-black text-ink-900 sm:text-3xl">
+    <section className="mx-auto max-w-5xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+      <Reveal className="text-center">
+        <p className="text-xs font-bold tracking-[0.2em] text-primary-600">PROBLEM</p>
+        <h2 className="font-display mt-3 text-2xl font-black text-ink-900 sm:text-3xl">
           こんなお悩みありませんか？
         </h2>
-        <span className="mx-auto mt-4 block h-1 w-10 rounded-full bg-primary-500" />
-      </div>
+      </Reveal>
 
-      <ul className="mt-10 grid gap-4 sm:grid-cols-3">
-        {problems.map((text) => (
-          <li
-            key={text}
-            className="flex items-center gap-3 rounded-2xl border border-primary-200 bg-white px-5 py-4 shadow-sm"
-          >
-            <Icon name="check_circle" filled className="shrink-0 text-primary-500" />
-            <span className="text-sm font-bold text-ink-800">{text}</span>
-          </li>
+      <div className="mt-10 grid gap-5 sm:grid-cols-3">
+        {problems.map((item, i) => (
+          <Reveal key={item.text} delay={i * 100}>
+            <div className="flex h-full flex-col items-center gap-4 rounded-3xl bg-white p-7 text-center shadow-sm ring-1 ring-ink-100">
+              <span className="flex h-14 w-14 items-center justify-center rounded-full bg-primary-50 text-primary-600">
+                <Icon name={item.icon} className="!text-2xl" />
+              </span>
+              <p className="text-sm font-bold leading-relaxed text-ink-800">{item.text}</p>
+            </div>
+          </Reveal>
         ))}
-      </ul>
+      </div>
     </section>
   );
 }

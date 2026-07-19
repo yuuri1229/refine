@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #1a1a1a;
+  --background: #fbf7f2;
+  --foreground: #201b17;
 
   --color-primary-50: #fff4eb;
   --color-primary-100: #ffe4cc;
@@ -15,30 +15,30 @@
   --color-primary-800: #8f3b00;
   --color-primary-900: #6b2c00;
 
-  --color-ink-50: #f7f7f8;
-  --color-ink-100: #ececee;
-  --color-ink-200: #d7d7db;
-  --color-ink-300: #b3b3ba;
-  --color-ink-400: #8b8b95;
-  --color-ink-500: #6b6b76;
-  --color-ink-600: #52525c;
-  --color-ink-700: #3d3d45;
-  --color-ink-800: #26262b;
-  --color-ink-900: #17171a;
+  --color-ink-50: #f8f5f1;
+  --color-ink-100: #ece6de;
+  --color-ink-200: #d9d0c4;
+  --color-ink-300: #b7aa98;
+  --color-ink-400: #948572;
+  --color-ink-500: #736657;
+  --color-ink-600: #574d42;
+  --color-ink-700: #423a32;
+  --color-ink-800: #2c2620;
+  --color-ink-900: #1b1815;
 
-  --color-secondary-50: #eef6fb;
-  --color-secondary-100: #d9edf6;
-  --color-secondary-200: #b0d9ec;
-  --color-secondary-300: #7fbfdc;
-  --color-secondary-400: #4a9dc4;
-  --color-secondary-500: #2c7ea8;
-  --color-secondary-600: #216488;
-  --color-secondary-700: #1c4f6c;
-  --color-secondary-800: #193f56;
-  --color-secondary-900: #16354a;
+  --color-moss-50: #eef2ec;
+  --color-moss-100: #dbe4d6;
+  --color-moss-200: #b6c9ac;
+  --color-moss-300: #8fac81;
+  --color-moss-400: #6a8f5c;
+  --color-moss-500: #4f7343;
+  --color-moss-600: #3d5b33;
+  --color-moss-700: #304a29;
+  --color-moss-800: #253a20;
+  --color-moss-900: #1b2c18;
 
-  --color-cream-50: #fffaf3;
-  --color-cream-100: #fdf3e5;
+  --color-paper: #fbf7f2;
+  --color-paper-raised: #ffffff;
 
   --color-line: #06c755;
 }
@@ -69,35 +69,57 @@
   --color-ink-800: var(--color-ink-800);
   --color-ink-900: var(--color-ink-900);
 
-  --color-secondary-50: var(--color-secondary-50);
-  --color-secondary-100: var(--color-secondary-100);
-  --color-secondary-200: var(--color-secondary-200);
-  --color-secondary-300: var(--color-secondary-300);
-  --color-secondary-400: var(--color-secondary-400);
-  --color-secondary-500: var(--color-secondary-500);
-  --color-secondary-600: var(--color-secondary-600);
-  --color-secondary-700: var(--color-secondary-700);
-  --color-secondary-800: var(--color-secondary-800);
-  --color-secondary-900: var(--color-secondary-900);
+  --color-moss-50: var(--color-moss-50);
+  --color-moss-100: var(--color-moss-100);
+  --color-moss-200: var(--color-moss-200);
+  --color-moss-300: var(--color-moss-300);
+  --color-moss-400: var(--color-moss-400);
+  --color-moss-500: var(--color-moss-500);
+  --color-moss-600: var(--color-moss-600);
+  --color-moss-700: var(--color-moss-700);
+  --color-moss-800: var(--color-moss-800);
+  --color-moss-900: var(--color-moss-900);
 
-  --color-cream-50: var(--color-cream-50);
-  --color-cream-100: var(--color-cream-100);
+  --color-paper: var(--color-paper);
+  --color-paper-raised: var(--color-paper-raised);
 
   --color-line: var(--color-line);
 
   --font-sans: var(--font-noto-sans-jp), "Hiragino Kaku Gothic ProN",
     "Hiragino Sans", Meiryo, sans-serif;
+  --font-display: var(--font-zen-kaku-gothic-new), var(--font-noto-sans-jp),
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
 
-  --animate-fade-up: fade-up 0.6s ease-out both;
+  --animate-fade-up: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  --animate-fade-in: fade-in 0.8s ease-out both;
+  --animate-grow-line: grow-line 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both;
 
   @keyframes fade-up {
     from {
       opacity: 0;
-      transform: translateY(16px);
+      transform: translateY(22px);
     }
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes grow-line {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
     }
   }
 }
@@ -143,4 +165,40 @@ html {
 ::selection {
   background: var(--color-primary-200);
   color: var(--color-primary-900);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Reveal-on-scroll: JS toggles [data-revealed] once IntersectionObserver fires. */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(28px);
+  transition:
+    opacity 0.8s cubic-bezier(0.2, 0.7, 0.2, 1),
+    transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+[data-reveal][data-revealed="true"] {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .animate-fade-up,
+  .animate-fade-in,
+  .animate-grow-line {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }

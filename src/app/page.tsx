@@ -8,6 +8,7 @@ import Voice from "@/components/home/Voice";
 import Profile from "@/components/home/Profile";
 import News from "@/components/home/News";
 import ContactCta from "@/components/home/ContactCta";
+import PhoneCtaBar from "@/components/PhoneCtaBar";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
@@ -19,9 +20,15 @@ export default function Home() {
       <Hero />
       <Problem />
       <Solution />
+      <div className="py-2">
+        <PhoneCtaBar />
+      </div>
       <Pricing />
       <Flow />
       <Voice />
+      <div className="py-10">
+        <PhoneCtaBar />
+      </div>
       <ContactCta />
       <Profile />
       <News />

@@ -1,4 +1,5 @@
 import Icon from "@/components/Icon";
+import Reveal from "@/components/Reveal";
 
 const steps = [
   {
@@ -25,34 +26,26 @@ const steps = [
 
 export default function Flow() {
   return (
-    <section id="flow" className="scroll-mt-16 bg-ink-900 py-16 text-white">
+    <section id="flow" className="scroll-mt-20 bg-ink-900 py-16 text-white sm:py-20">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div>
-          <p className="text-sm font-bold tracking-wide text-primary-400">FLOW</p>
-          <h2 className="mt-2 text-2xl font-black sm:text-3xl">お申し込みの流れ</h2>
-          <span className="mt-4 block h-1 w-10 rounded-full bg-primary-500" />
-        </div>
+        <Reveal className="text-center">
+          <p className="text-xs font-bold tracking-[0.2em] text-primary-400">FLOW</p>
+          <h2 className="font-display mt-3 text-2xl font-black sm:text-3xl">お申し込みの流れ</h2>
+        </Reveal>
 
-        <div className="mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="relative mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="absolute top-8 left-0 hidden h-px w-full bg-white/15 lg:block" />
           {steps.map((item, i) => (
-            <div key={item.title} className="relative">
-              <div className="flex items-center gap-3">
-                <span className="text-4xl font-black text-primary-400">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10">
-                  <Icon name={item.icon} />
-                </span>
-              </div>
-              <h3 className="mt-4 text-base font-bold">{item.title}</h3>
+            <Reveal key={item.title} delay={i * 100} className="relative flex flex-col items-center text-center">
+              <span className="relative z-10 flex h-16 w-16 items-center justify-center rounded-full bg-primary-500 text-white shadow-lg ring-4 ring-ink-900">
+                <Icon name={item.icon} className="!text-2xl" />
+              </span>
+              <span className="tnum mt-4 text-xs font-bold text-primary-400">
+                STEP {String(i + 1).padStart(2, "0")}
+              </span>
+              <h3 className="font-display mt-2 text-base font-bold">{item.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-ink-300">{item.text}</p>
-              {i < steps.length - 1 && (
-                <Icon
-                  name="arrow_forward"
-                  className="absolute -right-7 top-3 hidden text-ink-600 lg:block"
-                />
-              )}
-            </div>
+            </Reveal>
           ))}
         </div>
       </div>
