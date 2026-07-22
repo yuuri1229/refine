@@ -85,10 +85,9 @@
 
   --color-line: var(--color-line);
 
-  --font-sans: var(--font-noto-sans-jp), "Hiragino Kaku Gothic ProN",
-    "Hiragino Sans", Meiryo, sans-serif;
-  --font-display: var(--font-zen-kaku-gothic-new), var(--font-noto-sans-jp),
-    "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --font-sans: "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    var(--font-noto-sans-jp), Meiryo, sans-serif;
+  --font-display: var(--font-sans);
 
   --animate-fade-up: fade-up 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both;
   --animate-fade-in: fade-in 0.8s ease-out both;

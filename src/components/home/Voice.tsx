@@ -8,7 +8,7 @@ export default function Voice() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center">
           <p className="text-xs font-bold tracking-[0.2em] text-primary-600">VOICE</p>
-          <h2 className="font-display mt-3 text-2xl font-black text-ink-900 sm:text-3xl">
+          <h2 className="font-display mt-3 text-2xl font-bold text-ink-900 sm:text-3xl">
             お客様の声
           </h2>
         </Reveal>
@@ -40,7 +40,7 @@ export default function Voice() {
                     <Icon name="arrow_forward" className="text-primary-400" />
                     <div className="text-center">
                       <p className="text-[11px] font-bold text-primary-600">見直し後</p>
-                      <p className="tnum text-base font-black text-primary-600">
+                      <p className="tnum text-base font-bold text-primary-600">
                         {voice.after.price}
                       </p>
                     </div>
@@ -50,7 +50,7 @@ export default function Voice() {
                     &ldquo;{voice.comment}&rdquo;
                   </p>
 
-                  <p className="mt-4 text-right text-sm font-black text-primary-600">
+                  <p className="mt-4 text-right text-sm font-bold text-primary-600">
                     月々 -{voice.savedAmount}
                   </p>
                 </div>

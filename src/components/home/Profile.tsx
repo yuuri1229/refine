@@ -9,7 +9,7 @@ export default function Profile() {
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center">
           <p className="text-xs font-bold tracking-[0.2em] text-primary-600">PROFILE</p>
-          <h2 className="font-display mt-3 text-2xl font-black text-ink-900 sm:text-3xl">
+          <h2 className="font-display mt-3 text-2xl font-bold text-ink-900 sm:text-3xl">
             代表あいさつ
           </h2>
         </Reveal>
@@ -30,7 +30,7 @@ export default function Profile() {
 
           <Reveal delay={120}>
             <p className="text-sm font-bold text-ink-500">代表</p>
-            <p className="font-display mt-1 text-2xl font-black text-ink-900">
+            <p className="font-display mt-1 text-2xl font-bold text-ink-900">
               {siteConfig.representative}
             </p>
 

@@ -71,7 +71,7 @@ export default function PrivacyPolicyPage() {
         <div className="mt-10 space-y-10">
           {sections.map((section) => (
             <section key={section.heading}>
-              <h2 className="text-lg font-black text-ink-900">{section.heading}</h2>
+              <h2 className="text-lg font-bold text-ink-900">{section.heading}</h2>
               <div className="mt-3 space-y-2 text-sm leading-relaxed text-ink-700">
                 {section.body.map((p) => (
                   <p key={p}>{p}</p>
@@ -88,7 +88,7 @@ export default function PrivacyPolicyPage() {
           ))}
 
           <section>
-            <h2 className="text-lg font-black text-ink-900">8. お問い合わせ窓口</h2>
+            <h2 className="text-lg font-bold text-ink-900">8. お問い合わせ窓口</h2>
             <p className="mt-3 text-sm leading-relaxed text-ink-700">
               個人情報に関するお問い合わせは、以下の窓口までご連絡ください。
             </p>

@@ -15,7 +15,7 @@ export default async function News() {
     <section id="news" className="scroll-mt-20 mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
       <Reveal className="text-center">
         <p className="text-xs font-bold tracking-[0.2em] text-primary-600">NEWS</p>
-        <h2 className="font-display mt-3 text-2xl font-black text-ink-900 sm:text-3xl">
+        <h2 className="font-display mt-3 text-2xl font-bold text-ink-900 sm:text-3xl">
           お知らせ
         </h2>
       </Reveal>

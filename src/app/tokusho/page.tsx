@@ -71,14 +71,14 @@ export default function TokushoPage() {
         <dl className="divide-y divide-ink-100">
           {items.map((item) => (
             <div key={item.label} className="grid gap-1 py-6 sm:grid-cols-[10rem_1fr] sm:gap-6">
-              <dt className="text-sm font-black text-ink-900">{item.label}</dt>
+              <dt className="text-sm font-bold text-ink-900">{item.label}</dt>
               <dd className="text-sm leading-relaxed text-ink-700">{item.value}</dd>
             </div>
           ))}
         </dl>
 
         <section className="mt-10 border-t border-ink-100 pt-8">
-          <h2 className="text-lg font-black text-ink-900">キャンセルに関する特約</h2>
+          <h2 className="text-lg font-bold text-ink-900">キャンセルに関する特約</h2>
           <p className="mt-3 text-sm leading-relaxed text-ink-700">
             サービスお申込み後のキャンセルはお受けいたしません。
           </p>

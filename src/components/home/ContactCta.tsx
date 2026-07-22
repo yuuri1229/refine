@@ -12,7 +12,7 @@ export default function ContactCta() {
       <div className="relative mx-auto max-w-3xl px-4 pt-10 text-center sm:px-6 lg:px-8">
         <Reveal>
           <p className="text-xs font-bold tracking-[0.2em] text-primary-50">CONTACT</p>
-          <h2 className="font-display mt-3 text-2xl font-black sm:text-3xl">お問合わせ</h2>
+          <h2 className="font-display mt-3 text-2xl font-bold sm:text-3xl">お問合わせ</h2>
 
           <p className="mx-auto mt-6 max-w-xl text-base font-bold leading-relaxed sm:text-lg">
             まずはLINEで相談！

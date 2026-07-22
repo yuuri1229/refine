@@ -27,7 +27,7 @@ export default function Solution() {
           <p className="text-xs font-bold tracking-[0.2em] text-primary-600">
             ＼ これらの悩みを解決 ／
           </p>
-          <h2 className="font-display mt-3 text-2xl font-black text-ink-900 sm:text-3xl">
+          <h2 className="font-display mt-3 text-2xl font-bold text-ink-900 sm:text-3xl">
             無料で料金分析、最適プランを提案
           </h2>
         </Reveal>

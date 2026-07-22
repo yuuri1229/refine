@@ -1,21 +1,16 @@
 import type { Metadata } from "next";
-import { Noto_Sans_JP, Zen_Kaku_Gothic_New } from "next/font/google";
+import { Noto_Sans_JP } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { siteConfig } from "@/data/site";
 import "./globals.css";
 
+// Noto Sans JP is only a fallback for platforms without Hiragino Sans
+// (Windows/Android/Linux); see --font-sans in globals.css.
 const notoSansJP = Noto_Sans_JP({
   variable: "--font-noto-sans-jp",
   subsets: ["latin"],
-  weight: ["400", "500", "700", "900"],
-  display: "swap",
-});
-
-const zenKakuGothicNew = Zen_Kaku_Gothic_New({
-  variable: "--font-zen-kaku-gothic-new",
-  subsets: ["latin"],
-  weight: ["500", "700", "900"],
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 
@@ -83,7 +78,7 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
-      className={`${notoSansJP.variable} ${zenKakuGothicNew.variable} h-full antialiased`}
+      className={`${notoSansJP.variable} h-full antialiased`}
     >
       <head>
         <script

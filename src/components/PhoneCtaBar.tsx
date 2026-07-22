@@ -10,7 +10,7 @@ export default function PhoneCtaBar() {
       <Reveal className="flex flex-col items-center gap-6 rounded-[2rem] bg-white p-6 shadow-[0_8px_30px_-12px_rgba(32,27,23,0.15)] ring-1 ring-ink-100 sm:flex-row sm:justify-between sm:p-8">
         <div>
           <p className="text-sm font-bold text-ink-900">携帯料金のご相談　初回無料</p>
-          <p className="mt-1 flex items-center gap-2 text-2xl font-black text-primary-600">
+          <p className="mt-1 flex items-center gap-2 text-2xl font-bold text-primary-600">
             <Icon name="call" className="text-xl" />
             <a href={`tel:${siteConfig.phone}`} className="tnum hover:underline">
               {siteConfig.phone}

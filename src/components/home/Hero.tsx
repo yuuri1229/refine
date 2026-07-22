@@ -38,7 +38,7 @@ export default function Hero() {
           </p>
 
           <h1
-            className="animate-fade-up font-display mt-6 text-4xl font-black leading-[1.15] tracking-tight text-ink-900 sm:text-5xl md:text-6xl"
+            className="animate-fade-up font-display mt-6 text-4xl font-bold leading-[1.15] tracking-tight text-ink-900 sm:text-5xl md:text-6xl"
             style={{ animationDelay: "160ms" }}
           >
             携帯料金の見直し

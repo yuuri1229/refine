@@ -30,7 +30,7 @@ export default function Flow() {
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
         <Reveal className="text-center">
           <p className="text-xs font-bold tracking-[0.2em] text-primary-400">FLOW</p>
-          <h2 className="font-display mt-3 text-2xl font-black sm:text-3xl">お申し込みの流れ</h2>
+          <h2 className="font-display mt-3 text-2xl font-bold sm:text-3xl">お申し込みの流れ</h2>
         </Reveal>
 
         <div className="relative mt-12 grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
